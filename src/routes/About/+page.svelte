@@ -77,9 +77,7 @@
 						<h3 class="text-base font-semibold leading-7 tracking-tight text-white">
 							Dominic Jhon
 						</h3>
-						<p class="text-sm font-semibold leading-6 text-indigo-600">
-							Assistant Researcher
-						</p>
+						<p class="text-sm font-semibold leading-6 text-indigo-600">Assistant Researcher</p>
 					</div>
 				</div>
 			</li>
