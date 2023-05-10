@@ -79,7 +79,7 @@
 		if (recentInsert) {
 			mess = `Hello ${recentInsert}, what would you like to talk about?`;
 		} else {
-			mess = "Hello, what would you like to call you?";
+			mess = "Hello! I am Ali. May I please know your name?";
 		}
 
 
@@ -95,10 +95,9 @@
 </script>
 
 <div class="flex flex-col pt-20 w-full px-8 items-center gap-2">
-
 	<div class="h-[500px] w-full bg-gray-900 rounded-md p-4 overflow-y-auto flex flex-col gap-4">
 		<div class="flex flex-col gap-2">
-			<ChatMessage type="assistant" message="{mess}" />
+			<ChatMessage type="assistant" message={mess} />
 			{#each chatMessages as message}
 				<ChatMessage type={message.role} message={message.content} />
 			{/each}
