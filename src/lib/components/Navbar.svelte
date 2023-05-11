@@ -8,7 +8,7 @@
 <div class="navbar bg-base-300 shadow-lg fixed top-0 left-0 w-full z-50">
   <div class="flex-1 ml-7">
     <a href="/" class="logo">
-    <img src="profadiver-logo.png" alt="logo" width="120" height="80"> 
+    <img src="profadiver-ali.png" alt="logo" width="50" height="30"> 
     </a>
   </div>
   <div class="flex-none text-neutral-content mr-7">
