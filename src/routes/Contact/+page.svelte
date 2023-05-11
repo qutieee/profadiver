@@ -10,14 +10,11 @@
 	</div>
 	<div class="mx-auto max-w-2xl text-center">
 		<h2 class="text-3xl font-bold text-white sm:text-4xl">Contact Us</h2>
-		<p class="mt-2 text-lg leading-8 text-white-200">
-			Please fill out the form below and feel free to reach out to our team. We value your feedback,
-			inquiries, and suggestions. Whether you have a question about our website or
-			services, or simply want to share your thoughts, our dedicated team is here to provide you
-			with the support you need. <br>Thank you for using Profadiver!
+		<p class="mt-2 text-1xl leading-8 text-white-200">
+			Please fill out the form below and feel free to reach out to our team. We value your feedback, inquiries, and suggestions. Thank you for using Profadiver!
 		</p>
 	</div>
-	<form action="#" method="POST" class="mx-auto mt-16 max-w-xl sm:mt-20">
+	<form action="#" method="POST" class="mx-auto mt-10 max-w-xl">
 		<div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
 			<div>
 				<label for="first-name" class="block text-sm font-semibold leading-6 text-white-200"
@@ -29,7 +26,7 @@
 						name="first-name"
 						id="first-name"
 						autocomplete="given-name"
-						class="block w-full rounded-md border-0 px-3.5 py-2 text-white-200 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+						class="input input-bordered w-full md:input-md max-w-xs"
 					/>
 				</div>
 			</div>
@@ -43,7 +40,7 @@
 						name="last-name"
 						id="last-name"
 						autocomplete="family-name"
-						class="block w-full rounded-md border-0 px-3.5 py-2 text-white-200 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+						class="input input-bordered w-full md:input-md max-w-xs"
 					/>
 				</div>
 			</div>
@@ -56,9 +53,9 @@
 						name="email"
 						id="email"
 						autocomplete="email"
-						class="block w-full rounded-md border-0 px-3.5 py-2 text-white-200 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+						class="input input-bordered w-full md:input-md max-w-2lg"
 					/>
-				</div>
+				</div> 	
 			</div>
 			<div class="sm:col-span-2">
 				<label for="message" class="block text-sm font-semibold leading-6 text-white-200"
@@ -69,7 +66,7 @@
 						name="message"
 						id="message"
 						rows="4"
-						class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-white focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+						class="input input-bordered w-full md:input-md  max-w-2lg"
 					/>
 				</div>
 			</div>
