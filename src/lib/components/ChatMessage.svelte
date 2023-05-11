@@ -24,13 +24,13 @@ let activeColor = '';
 	<div class="chat-image avatar">
 		<div class="w-10 rounded-full">
 			<img
-				src="https://ui-avatars.com/api/?name={type === 'user' ? 'Me' : 'R'}"
+				src="https://ui-avatars.com/api/?name={type === 'user' ? 'Me' : 'A'}"
 				alt="{type} avatar"
 			/>
 		</div>
 	</div>
 	<div class="chat-header">
-		{type === 'user' ? 'Me' : 'Reilly'}
+		{type === 'user' ? 'Me' : 'Ali'}
 	</div>
 	<div class="chat-bubble {type === 'user' ? ''+ activeColor +'' : 'chat-bubble'}">
 		{message}

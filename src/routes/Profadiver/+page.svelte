@@ -69,12 +69,9 @@
 		console.error(err)
 	}
 
-	
-
-
 	  export let recentInsert;
   
-		let mess;
+		let mess ="";
 		
 		if (recentInsert) {
 			mess = `Hello ${recentInsert}, what would you like to talk about?`;
