@@ -1,15 +1,15 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
-	import supabase from '$lib/db';
+
+	import supabase from '$lib/db.js';
 	import ChatMessage from '$lib/components/ChatMessage.svelte'
 	import type { ChatCompletionRequestMessage } from 'openai'
 	import { SSE } from 'sse.js'
-  	import { page } from '$app/stores';
+	import { onMount } from 'svelte';
 
 	let query: string = ''
 	let answer: string = ''
 	let loading: boolean = false
-	let chatMessages: ChatCompletionRequestMessage[] = JSON.parse(localStorage.getItem('chatMessages')) || []
+	let chatMessages: ChatCompletionRequestMessage[] = []
 	let scrollToDiv: HTMLDivElement
 
 	function scrollToBottom() {
@@ -69,41 +69,64 @@
 		console.error(err)
 	}
 
-	  export let recentInsert;
-  
-		let mess ="";
-		
-		if (recentInsert) {
-			mess = `Hello ${recentInsert}, what would you like to talk about?`;
-		} else {
-			mess = "Hello! I am Ali. May I please know your name?";
-		}
+	// Function to fetch the most recent user name from the database
+	async function getName() {
+		const { data: userNames, error } = await supabase
+			.from('userNames')
+			.select('name')
+			.order('id', { ascending: false })
+			.limit(1)
 
-
-	  window.onbeforeunload = () => {
-		localStorage.removeItem('chatMessages')
-		localStorage.removeItem('lastMessage')
+			if (error) {
+					console.error(error);
+					return null;
+				} else {
+					return userNames[0].name;
+				}
 	}
 
+	let user =''
+	onMount(async () => {
 
-
+		const result = await getName();
+		if (result) {
+		user = result;
+		}
+	});
 
 
 </script>
 
+
 <div class="flex flex-col pt-20 w-full px-8 items-center gap-2">
 	<div class="h-[500px] w-full bg-gray-900 rounded-md p-4 overflow-y-auto flex flex-col gap-4">
 		<div class="flex flex-col gap-2">
-			<ChatMessage type="assistant" message={mess} />
-			{#each chatMessages as message}
-				<ChatMessage type={message.role} message={message.content} />
-			{/each}
-			{#if answer}
-				<ChatMessage type="assistant" message={answer} />
+
+			<p></p> 
+			{#if user}
+					<ChatMessage type="assistant" message="Hello {user}, I am Ali. what would you like to talk about?" />
+				{#each chatMessages as message}
+					<ChatMessage type={message.role} message={message.content} />
+				{/each}
+				{#if answer}
+					<ChatMessage type="assistant" message={answer} />
+				{/if}
+				{#if loading}
+					<ChatMessage type="assistant" message="Typing..." />
+				{/if}
+			{:else}
+				<ChatMessage type="assistant" message="Hello! I am Ali. May I please know your name?" />
+				{#each chatMessages as message}
+					<ChatMessage type={message.role} message={message.content} />
+				{/each}
+				{#if answer}
+					<ChatMessage type="assistant" message={answer} />
+				{/if}
+				{#if loading}
+					<ChatMessage type="assistant" message="Typing..." />
+				{/if}
 			{/if}
-			{#if loading}
-				<ChatMessage type="assistant" message="Typing..." />
-			{/if}
+
 		</div>
 		<div class="" bind:this={scrollToDiv} />
 	</div>

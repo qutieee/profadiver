@@ -1,34 +1,21 @@
 <script>
 	import supabase from '$lib/db'
 
-	let name = '';
+let name = '';
 
-	async function saveName() {
-		// Create a new chat room
-		const newName = await supabase.from('userNames').insert({ name })
+async function saveName() {
+	// Create a new chat room
+	const newName = await supabase.from('userNames').insert({ name })
 
-		// Open the modal
-		const modal = document.getElementById('my-modal-6')
-		modal.checked = true
-	}
+	// Open the modal
+	const modal = document.getElementById('my-modal-6')
+	modal.checked = true
+}
 
-	// Function to fetch the most recent user name from the database
-	export async function load() {
-		const { data: userNames, error } = await supabase
-			.from('userNames')
-			.select('name')
-			.order('id', { ascending: false })
-			.limit(1)
-
-		if (error) throw error
-
-		return {
-			page: { recentInsert: userNames[0].name }
-		}
-	}
+	
 </script>
 
-<div class="isolate bg-base-100 px-6 py-24 sm:py-32 lg:px-8 ">
+<div class="isolate bg-base-100 py-24">
 	<div
 		class="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]"
 		aria-hidden="true"
@@ -38,7 +25,8 @@
 			style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"
 		/>
 	</div>
-	<div class="mx-auto max-w-2xl mt-20 text-center">
+	
+	<div class="mx-auto max-w-2xl mt-20 text-center min-[320px]:text-center min-[320px]:mx-auto">
 		<div class="m-8">
 			<h1 class="text-5xl font-bold">Welcome to</h1>
 			<img src="profadiver-logo.png" alt="logo"/>
@@ -52,11 +40,12 @@
 					id="name-input"
 					placeholder="Enter your name"
 					class="input input-bordered lg:input-lg md:input-md w-full max-w-xs"
+					required
 				/>
 
 				<button
 					on:click={saveName}
-					class="btn btn-md mt-3  lg:btn-lg text-white ${'modal-action'}">Get Started</button
+					class="btn btn-md mt-3 lg:btn-lg text-white ${'modal-action'}">Get Started</button
 				>
 			</div>
 		</div>
