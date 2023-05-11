@@ -8,12 +8,14 @@
 			style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"
 		/>
 	</div>
-	<div class="mx-auto max-w-2xl text-center">
-		<h2 class="text-3xl font-bold text-white sm:text-4xl">Contact Us</h2>
-		<p class="mt-2 text-1xl leading-8 text-white-200">
-			Please fill out the form below and feel free to reach out to our team. We value your feedback, inquiries, and suggestions. Thank you for using Profadiver!
-		</p>
-	</div>
+
+
+		<div class="mx-auto max-w-2xl text-center">
+			<h2 class="text-3xl font-bold text-white sm:text-4xl">Contact Us</h2>
+			<p class="mt-2 text-1xl leading-8 text-white-200">
+				Please fill out the form below and feel free to reach out to our team. We value your feedback, inquiries, and suggestions. Thank you for using Profadiver!
+			</p>
+		</div>
 	<form action="#" method="POST" class="mx-auto mt-10 max-w-xl">
 		<div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
 			<div>
