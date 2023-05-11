@@ -91,6 +91,7 @@ async function saveName() {
 			committed to providing a safe and secure browsing experience. Rest assured that your visit to
 			our website is completely confidential and anonymous.
 		</p>
+		<p class="font-semibold text-red-600">If you go back or navigate to another page, all of the conversation will be refreshed and deleted.</p>
 		<div class="modal-action">
 			<div class="${'modal-action'}"><a href="/Profadiver" class="${'btn'}">I agree!</a></div>
 		</div>
